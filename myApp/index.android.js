@@ -7,7 +7,7 @@ export default class MyApp extends Component {
   render() {
     return (
       <View>
-        <Component1 />
+        <Component1 message='Hello World!'/>
       </View>
     );
   }
