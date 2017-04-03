@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import { AppRegistry, Text, View } from 'react-native';
 
 export default class Component1 extends Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             name: "Todor",
-            showName:false
+            showName: false,
+            message:this.props.message
         }
     }
+
+    static defaultProps = {
+        message:'Hi There'
+    }
+
     render() {
+        
         let name = this.state.showName ? this.state.name : 'No name';
+        console.log("name: "+ name);
     return (
       <View>
-            <Text>{this.props.message}</Text>
+            <Text>{this.state.message}</Text>
             <Text>{name}</Text>
         </View>
       )
