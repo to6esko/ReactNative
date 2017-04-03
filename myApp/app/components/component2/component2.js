@@ -6,6 +6,9 @@ export default class Component2 extends Component {
     onPress() {
         console.log('Area Pressed');
     }
+    onPress2() {
+        console.log('Area 2 Pressed')
+    }
     render() {
         return (
             <View>
@@ -16,15 +19,18 @@ export default class Component2 extends Component {
                     <TouchableHighlight
                         style={styles.v1}
                         onPress={this.onPress}
-                        underlayColor="blue"
-                    >
-                    <View >
-                        <Text style={styles.vText}>View 1</Text>
-                    </View>
-                    </TouchableHighlight>    
-                    <View style={styles.v2}>
-                        <Text style={styles.vText}>View 2</Text>
-                    </View>
+                        underlayColor="blue">
+                        <View >
+                            <Text style={styles.vText}>View 1</Text>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableOpacity
+                        style={styles.v2}
+                        onPress={this.onPress2}>
+                        <View >
+                            <Text style={styles.vText}>View 2</Text>
+                        </View>
+                    </TouchableOpacity>
                     <View style={styles.v3}>
                         <Text style={styles.vText}>View 3</Text>
                     </View>
@@ -63,7 +69,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     vText: {
-        color:'white'
+        color: 'white'
     }
 });
 
